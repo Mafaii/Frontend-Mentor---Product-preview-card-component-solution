@@ -1,0 +1,112 @@
+:root {
+    /* colors */
+    --white : hsl(0, 0%, 100%);
+    --background: hsl(30, 38%, 92%);
+    --cyan: hsl(158, 36%, 37%);
+    --blue: hsl(212, 21%, 14%);
+    --grey: hsl(228, 12%, 48%);
+    /* numbers */
+    --round-corners: 10px;
+    /* fonts */
+    --fancy: 'Fraunces', serif;
+    --monserrat:'Montserrat', sans-serif;
+}
+body {
+    background: var(--background);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+}
+.desktop {
+    display: none;
+} 
+/* add media for desktop and mobile*/
+
+.item-card {
+    background: var(--white);
+    border-radius: var(--round-corners);
+    max-width: 300px;   
+    overflow: hidden;     
+}/*add @media for desktop with flex*/
+.img {
+    height: auto;
+    width: 100%;
+    object-fit: fill;
+}
+
+.product-info {
+    padding: 1em;
+}
+.product-type {
+    text-transform: uppercase;
+    font-family: var(--monserrat);
+    color: var(var(--grey));
+    font-size: 0.8em;
+}
+.product-name {
+    font-size: 1.2rem;
+    font-family: var(--fancy);
+}
+.product-desc {
+    font-family: var(--monserrat);
+    color: var(--grey);
+    font-size: 0.9rem;
+
+}
+.price-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+}
+.product-price {
+    font-family: var(--fancy);
+}
+.product-price.current {
+    font-size: 2.3rem;
+    color: var(--cyan);
+}
+.product-price.old {
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    color: var(--grey);
+}
+.product-add {
+    font-family: var(--monserrat);
+    width: 100%;    
+    background: var(--cyan);
+    border-radius: var(--round-corners);
+    color: var(--white);
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1.03rem;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 900px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: initial;
+    }
+    .item-card {
+        display: flex;
+        flex-direction: row;
+        max-width: none;        
+    }
+    .img {
+        height: 100%;
+        width: 300px;
+    }
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 300px;
+    }
+}
